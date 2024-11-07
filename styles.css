@@ -15,6 +15,7 @@ body, html {
     align-items: center;
     background-color: #121212;
     color: #fff;
+    position: relative;
 }
 
 /* Lava Lamp Background */
@@ -25,17 +26,59 @@ body, html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: radial-gradient(circle, #ff6347, #ff4500, #ff1493, #8a2be2, #00008b);
-    background-size: 200% 200%;
-    animation: lavaLamp 8s ease-in-out infinite;
     z-index: -1;
-    filter: blur(30px);
 }
 
-@keyframes lavaLamp {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.blob {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #ff6347, #ff4500);
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.6;
+    animation: moveBlobs 10s infinite ease-in-out alternate;
+}
+
+/* Create multiple blobs with different colors */
+.blob:nth-child(2) {
+    background: radial-gradient(circle, #ff1493, #ff4500);
+    width: 400px;
+    height: 400px;
+    animation-duration: 12s;
+}
+
+.blob:nth-child(3) {
+    background: radial-gradient(circle, #8a2be2, #00008b);
+    width: 300px;
+    height: 300px;
+    animation-duration: 14s;
+}
+
+.blob:nth-child(4) {
+    background: radial-gradient(circle, #32cd32, #228b22);
+    width: 450px;
+    height: 450px;
+    animation-duration: 16s;
+}
+
+/* Blob movement animation */
+@keyframes moveBlobs {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(100px, -100px);
+    }
+    50% {
+        transform: translate(-150px, 50px);
+    }
+    75% {
+        transform: translate(80px, 150px);
+    }
+    100% {
+        transform: translate(-50px, -150px);
+    }
 }
 
 /* Centered Content */
