@@ -1,119 +1,32 @@
-/* Reset styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body, html {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #121212;
-    color: #fff;
-    position: relative;
-}
-
-/* Lava Lamp Background */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.blob {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, #ff6347, #ff4500);
-    border-radius: 50%;
-    filter: blur(50px);
-    opacity: 0.6;
-    animation: moveBlobs 10s infinite ease-in-out alternate;
-}
-
-/* Create multiple blobs with different colors */
-.blob:nth-child(2) {
-    background: radial-gradient(circle, #ff1493, #ff4500);
-    width: 400px;
-    height: 400px;
-    animation-duration: 12s;
-}
-
-.blob:nth-child(3) {
-    background: radial-gradient(circle, #8a2be2, #00008b);
-    width: 300px;
-    height: 300px;
-    animation-duration: 14s;
-}
-
-.blob:nth-child(4) {
-    background: radial-gradient(circle, #32cd32, #228b22);
-    width: 450px;
-    height: 450px;
-    animation-duration: 16s;
-}
-
-/* Blob movement animation */
-@keyframes moveBlobs {
-    0% {
-        transform: translate(0, 0);
-    }
-    25% {
-        transform: translate(100px, -100px);
-    }
-    50% {
-        transform: translate(-150px, 50px);
-    }
-    75% {
-        transform: translate(80px, 150px);
-    }
-    100% {
-        transform: translate(-50px, -150px);
-    }
-}
-
 /* Centered Content */
 .centered-content {
     text-align: center;
     z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.centered-content h1 {
-    font-size: 2.5rem;
+#search-title {
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     color: #f0f0f0;
     opacity: 0.9;
 }
 
-/* Centered Search Bar */
-.search-bar input {
-    padding: 0.75rem 1.5rem;
-    width: 300px;
-    border: none;
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.search-bar input::placeholder {
+#results-container p {
     color: #ccc;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
 }
 
-.search-bar input:focus {
-    width: 350px;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #ff4500;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
